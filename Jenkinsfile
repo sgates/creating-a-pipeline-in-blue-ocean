@@ -24,6 +24,11 @@ pipeline {
         sh './jenkins/scripts/kill.sh'
       }
     }
+    stage('') {
+      steps {
+        cleanWs(deleteDirs: true, cleanWhenAborted: true, cleanWhenNotBuilt: true)
+      }
+    }
   }
   environment {
     CI = 'true'
